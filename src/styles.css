@@ -22,6 +22,7 @@ html{
 }
 body{
     background: var(--body-color);
+    cursor: default;
 }
 .shadow-button{
     -webkit-box-shadow: -1px -1px 0px 1px rgba(26,26,26,1);
@@ -115,6 +116,7 @@ main{
     width: 100%;
     height: 100vh;
 }
+/*Section one*/
 .section-one{
     display: flex;
     position: relative;
@@ -182,6 +184,9 @@ main{
         font-family: var(--principal-font);
         color: var(--black);
     }
+}
+.button-cv:hover{
+    transform: scale(1.1);
 }
 /*Styles section two*/
 .section-two{
@@ -257,18 +262,20 @@ main{
 }
 .lado-front{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     width: 300px;
     height: 420px;
     padding:20px;
-    cursor: pointer;
     background: var(--complementary-color);
     border: 2px solid var(--black);
+    border-radius: 6px;
     & h3 {
         font-family: var(--principal-font);
         font-size: var(--text-md);
+        width: 100%;
+        height: 150px;
     }
     & div {
         position: relative;
@@ -281,19 +288,23 @@ main{
 }
 .lado-front img{
     width: 100%;
-    min-height: 100px;
+    height: 300px;
+    object-fit: contain;
+    margin-top: -60px;
+    margin-bottom: 26px;
 }
 .lado-back{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 300px;
     height: 420px;
-    padding:40px;
-    cursor: pointer;
+    padding: 0 40px;
     background: var(--complementary-color);
     border: 2px solid var(--black);
+    border-radius: 6px;
     & h3 {
         margin-bottom: 20px;
         margin-top: -60px;
@@ -305,27 +316,22 @@ main{
         font-family: var(--secondary-font);
         font-size: var(--text-sm);
     }
-}
-
-.container-tecnologies{
-    display: grid;
-    place-content: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-    height: 200px;
-    & div{
-        width: 50px;
-        height: 50px;
-        border: 2px solid var(--black);
-        border-radius: 6px;
-    }
-    & div img {
+    & div:nth-child(3){
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        height: 100%;
+        height: 200px;
+        padding-bottom: 2px;
+    }
+    & div:nth-child(3) p {
+        font-family: var(--secondary-font);
+        color: var(--black);
     }
 }
 .buttons-proyect{
+    position: absolute;
+    bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -334,7 +340,9 @@ main{
     & button:nth-child(1){
         background: var(--secondary-color);
         border-radius: 8px;
+        border: 2px solid var(--black);
         padding: 2px 12px;
+        cursor: pointer;
         color: var(--black);
         font-family: var(--principal-font);
         font-weight: 500;
@@ -343,61 +351,78 @@ main{
     & button:nth-child(2){
         background: var(--principal-color);
         border-radius: 8px;
+        border: 2px solid var(--black);
         padding: 2px 12px;
+        cursor: pointer;
         color: var(--black);
         font-family: var(--principal-font);
         font-weight: 500;
         font-size: var(--text-sm);
     }
+    & button:nth-child(1):hover, button:nth-child(2):hover{
+        transform: scale(1.1);
+    }
 }
-.flip-card::before{
-    content: "Flip";
-    color: var(--black);
-}
-.flip-card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 24px;
-    padding: 4px 10px;
-    margin: 0 auto;
-    background: var(--principal-color);
-    color: var(--black);
-    border-radius: 6px;
-    border: 2px solid var(--black);
-    font-family: var(--principal-font);
-    font-weight: 800;
-    font-size: var(--text-sm);
-}
-.flip-card:hover{
-    cursor: pointer;
-    background: var(--secondary-color);
-    transform: scale(1.1);
-}
-
 .container-cards-flips {
     position: relative;
-    backface-visibility: hidden;
-    transition: 1s;
+    width: 300px;
+    height: 400px;
 }
-.container-cards-flips div{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .container-cards-flips .lado-front{
+    position: absolute;
     transform: perspective(500px) rotateY(0deg);
 }
 .container-cards-flips .lado-back{
+    position: absolute;
     transform: perspective(500px) rotateY(180deg);
+}
+.flipi{
+    backface-visibility: hidden;
+    transition: 1s;
 }
 .container-cards-flips:hover .lado-front{
     transform: perspective(500px) rotateY(180deg);
 }
 .container-cards-flips:hover .lado-back{
     transform: perspective(500px) rotateY(360deg);
+}
+
+
+/*Section four*/
+.section-four{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 60px;
+}
+.section-four div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+    background: var(--complementary-color);
+}
+.container-text{
+    position: relative;
+    text-align: left;
+    width: 400px;
+    height: 100%;
+    padding: 40px;
+    & h2{
+        position: absolute;
+        left: 80px;
+        width: 200px;
+        font-size: var(--text-lg);
+        font-family: var(--principal-font);
+    }
+    & h2 span {
+        color: var(--principal-color);
+    }
+}
+.container-form{
+    width: 400px;
 }
