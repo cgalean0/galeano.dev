@@ -244,7 +244,7 @@ main{
 .container-cards{
     width: 300px;
     height: 300px;
-    padding: 10px;
+    padding: 2px 20px;
     border: 2px solid var(--black);
     background: var(--complementary-color);
     & h3 {
@@ -277,145 +277,147 @@ main{
         color: var(--principal-color);
     }
 }
-.container-proyects{
+/*Cards proyects styles*/
+.card-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    gap: 60px;
-}
-.lado-front{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-    height: 420px;
-    padding:20px;
-    background: var(--complementary-color);
-    border: 2px solid var(--black);
-    border-radius: 6px;
-    & h3 {
-        font-family: var(--principal-font);
-        font-size: var(--text-md);
-        width: 100%;
-        height: 150px;
-    }
-    & div {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        font-family: var(--secondary-font);
-        font-weight: 400;
-    }
-}
-.lado-front img{
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    margin-top: -60px;
-    margin-bottom: 26px;
-}
-.lado-back{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-    height: 420px;
-    padding: 0 40px;
-    background: var(--complementary-color);
-    border: 2px solid var(--black);
-    border-radius: 6px;
-    & h3 {
-        margin-bottom: 20px;
-        margin-top: -60px;
-        font-family: var(--principal-font);
-        font-size: var(--text-md);
-        color: var(--principal-color);
-    }
-    & h4 {
-        font-family: var(--secondary-font);
-        font-size: var(--text-sm);
-    }
-    & div:nth-child(3){
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 200px;
-        padding-bottom: 2px;
-    }
-    & div:nth-child(3) p {
-        font-family: var(--secondary-font);
-        font-size: var(--text-sm);
-        color: var(--black);
-    }
-}
-.buttons-proyect{
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    & button:nth-child(1){
-        background: var(--secondary-color);
-        border-radius: 8px;
-        border: 2px solid var(--black);
-        padding: 2px 12px;
-        cursor: pointer;
-        color: var(--black);
-        font-family: var(--principal-font);
-        font-weight: 500;
-        font-size: var(--text-sm);
-    }
-    & button:nth-child(2){
-        background: var(--principal-color);
-        border-radius: 8px;
-        border: 2px solid var(--black);
-        padding: 2px 12px;
-        cursor: pointer;
-        color: var(--black);
-        font-family: var(--principal-font);
-        font-weight: 500;
-        font-size: var(--text-sm);
-    }
-    & button:nth-child(1):hover, button:nth-child(2):hover{
-        transform: scale(1.1);
-    }
+    width: 100%;
+    height: 800px;
 }
-.container-cards-flips {
-    position: relative;
+.card {
     width: 300px;
-    height: 400px;
+    height: 420px;
 }
-
-.container-cards-flips .lado-front{
+.front-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 420px;
+    background: var(--complementary-color);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--black);
     position: absolute;
     transform: perspective(500px) rotateY(0deg);
 }
-.container-cards-flips .lado-back{
+.image-proyect{
+    width: 100%;
+}
+.info-container-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    margin-top: -4px;
+    & h3 {
+        font-family: var(--principal-font);
+        font-size: var(--text-sm);
+    }
+}
+.cont-tecnologies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+.icon-card{
+    width: 40px;
+    height: 40px;
+}
+.icon-card:hover{
+    transform: scale(1.1);
+    cursor: default;
+}
+.contain-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 8px;
+}
+.button-flip{
+    width: 120px;
+    height: auto;
+    background: var(--principal-color);
+    border-radius: 10px;
+    border: 2px solid var(--black);
+    color: var(--black);
+    font-family: var(--principal-font);
+    font-weight: 800;
+    font-size: var(--text-sm);
+    padding: 2px 2px;
+}
+.button-flip:hover{
+    cursor: pointer;
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.back-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 420px;
+    padding: 2px 4px;
+    background: var(--complementary-color);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--black);
     position: absolute;
     transform: perspective(500px) rotateY(180deg);
 }
-.flipi{
+.card-description{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 360px;
+    padding: 8px 20px;
+    & h3 {
+        font-family: var(--principal-font);
+        font-size: var(--text-sm);
+    }
+    & p {
+        font-family: var(--secondary-font);
+        font-size: var(--text-input);
+    }
+}
+.code-button{
+    width: 120px;
+    height: auto;
+    background: var(--principal-color);
+    border-radius: 10px;
+    border: 2px solid var(--black);
+    color: var(--black);
+    font-family: var(--principal-font);
+    font-weight: 800;
+    font-size: var(--text-sm);
+    padding: 2px 2px;
+}
+.code-button:hover{
+    cursor: pointer;
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+.card div{
     backface-visibility: hidden;
     transition: 1s;
 }
-.container-cards-flips:hover .lado-front{
+.flip-front{
     transform: perspective(500px) rotateY(180deg);
 }
-.container-cards-flips:hover .lado-back{
+.flip-back{
     transform: perspective(500px) rotateY(360deg);
 }
-
-
 /*Section four*/
 .section-four{
     display: flex;
