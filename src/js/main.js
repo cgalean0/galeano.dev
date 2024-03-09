@@ -5,23 +5,24 @@ const backCard = document.querySelector('.back-card');
 let proyectos = []
 const tecnologies = [{name: 'JavaScript icon', image: 'https://img.icons8.com/?size=50&id=39854&format=png'}, {name: 'Html icon', image: 'https://img.icons8.com/?size=50&id=7hA5Ny9rDAmV&format=png'}, {name: 'CSS icon', image: 'https://img.icons8.com/?size=50&id=38272&format=png'}];
 
-function PROYECTO(name, description, urlCode, urlPreview, photoOfproyect, tec1, tec2, tec3){
+function PROYECTO(name, description, urlCode, urlPreview, photoOfproyect, arrayTech){
     this.name = name,
     this.description = description,
     this.urlCode = urlCode,
     this.urlPreview = urlPreview,
     this.photoOfproyect = photoOfproyect,
-    this.tec1 = tec1,
-    this.tec2 = tec2,
-    this.tec3 = tec3
+    this.arrayTech = arrayTech
 }
+//My proyects
+let passwGenerator = new PROYECTO('Password Generator', 'Este proyecto es un generador de contraseñas en Python que permite a los usuarios crear contraseñas seguras con diferentes combinaciones de letras minúsculas, mayúsculas, números y símbolos.', 'https://github.com/cgalean0/Password_Generator', 'https://github.com/cgalean0/Password_Generator', 'https://previews.dropbox.com/p/thumb/ACM2yJF6uT2swzw1EuTGND4YLeik8JUS_chRGlFZR_iBGIOqA4abin7Kor4C2WgxZLC0ugPjXc0LJNFePUriR5n0_S6WnSKY_CFLTn5w42BdX4fTumkEKVaMN6j8SpAU3YbHWBuLB7oMUYSWahCMKDhH3Ems3OTX2Yr6cif8oAyJ46Lxh1jMAFuWJ2zQmTCP0rUsS0aF2whjXnYbhov-t8ZdRSXo1tnY02e4Qc9jkpX-uQa-UYXuaTRgdLUYsrwMsVUwIEWVB3ZCyExJPqQwtBHDjwRS4izRiYZdUyxyaQm8xlxQQ6NMEmYOTEPSnYqN1TT2UqXrKChLYjhDERVSx_lM/p.png', tecnologies[0].image, tecnologies[1].image, tecnologies[2].image);
 
-let passwGenerator = new PROYECTO('Password Generator', 'Este proyecto es un generador de contraseñas en Python que permite a los usuarios crear contraseñas seguras con diferentes combinaciones de letras minúsculas, mayúsculas, números y símbolos.', 'https://github.com/cgalean0/Password_Generator', 'https://github.com/cgalean0/Password_Generator', 'https://www.ekreative.com/wp-content/uploads/2021/03/pankaj-patel-_SgRNwAVNKw-unsplash.jpg', tecnologies[0].image, tecnologies[1].image, tecnologies[2].image);
-let yardSale = new PROYECTO('E-comerce','Participacion en un proyecto código abierto, echo de la mano de un curso de Platzi, donde aprendi a utilizar mucho JavaScript.', 'https://github.com/cgalean0/curso-frontend-developer-js-practico', 'https://github.com/cgalean0/curso-frontend-developer-js-practico', 'https://www.ekreative.com/wp-content/uploads/2021/03/pankaj-patel-_SgRNwAVNKw-unsplash.jpg', tecnologies[0].image, tecnologies[1].image, tecnologies[2].image)
+let yardSale = new PROYECTO('E-comerce','Participacion en un proyecto código abierto, echo de la mano de un curso de Platzi, donde aprendi a utilizar mucho JavaScript.', 'https://github.com/cgalean0/curso-frontend-developer-js-practico', 'https://github.com/cgalean0/curso-frontend-developer-js-practico', 'https://previews.dropbox.com/p/thumb/ACMKW5hMwGWjh6I0wOgrP6tpTUcI6nKJnLIOUOogzfqfaDgq9ZnlDd0WPFMH0YTiv3-hiQ-bIz6HQtAxec_6vunWTFhnY1OxUN9kpHdOMg2qrHsTmY4F7r_RhrwGPowKx2JUL8yh_CrNqwEAjdz9OrTNHRBKlF8UUWUb46-FUeDR_JDsT9QNk8ovXrcslndX5JlNLyHR_lCRIhNACMxRzUlL1n1XDALImAXXxFCYgolFsmCLNOmz9G5jWCxAJ5JV1VRT9IZqSfAlJLhI2JglnCtREU5eFuTjsepT2N_peR8bZ1Opwvu2dBbR0qV2kv_IRn-tzOLOwKwzygyvKDDwZ-xB/p.png', tecnologies[0].image, tecnologies[1].image, tecnologies[2].image)
 
-
+//send to array proyectos
 proyectos.push(passwGenerator, yardSale);
 
+
+//function to make dinamic cards on document HTML;
 function dinamicProyects(){
     for(let i = 0; i < proyectos.length; i++){
         //Front of Cards
@@ -33,6 +34,8 @@ function dinamicProyects(){
         imageFront.setAttribute('src', proyectos[i].photoOfproyect);
         imageFront.setAttribute('class', 'image-proyect');
         imageFront.setAttribute('alt', proyectos[i].name);
+        let containerImage = document.createElement('div');
+        containerImage.setAttribute('class', 'container-image-front');
         let containerInfo = document.createElement('div');
         containerInfo.setAttribute('class', 'info-container-card');
         let titleOfProeyct = document.createElement('h3');
@@ -40,6 +43,17 @@ function dinamicProyects(){
         let divTecnologies = document.createElement('div');
         divTecnologies.setAttribute('class', 'cont-tecnologies');
         //Crear for para las tecnologias.
+        
+        let imageOne = document.createElement('img');
+        imageOne.setAttribute('class', 'icon-card');
+        imageOne.setAttribute('src', tecnologies[0].image);
+        let imageTwo = document.createElement('img');
+        imageTwo.setAttribute('class', 'icon-card');
+        imageTwo.setAttribute('src', tecnologies[1].image);
+        let imageThree = document.createElement('img');
+        imageThree.setAttribute('class', 'icon-card');
+        imageThree.setAttribute('src', tecnologies[2].image);
+
         let buttonContainer = document.createElement('div');
         buttonContainer.setAttribute('class', 'contain-button');
         let buttonFront = document.createElement('button');
@@ -59,14 +73,15 @@ function dinamicProyects(){
         let buttonCode = document.createElement('button');
         buttonCode.textContent = 'Code'
         buttonCode.setAttribute('class', 'code-button');
-
         //to order tags
         buttonContainerBack.appendChild(buttonCode);
         cardDescription.append(textDescription, paraphaseCards);
         buttonContainer.appendChild(buttonFront)
+        divTecnologies.append(imageOne, imageTwo, imageThree)
         containerInfo.append(titleOfProeyct, divTecnologies)
         backCardContainer.append(cardDescription, buttonContainerBack)
-        frontCardContainer.append(imageFront, containerInfo, buttonContainer);
+        containerImage.appendChild(imageFront);
+        frontCardContainer.append(containerImage, containerInfo, buttonContainer);
         card.append(frontCardContainer, backCardContainer);
         containerCards.appendChild(card);
 

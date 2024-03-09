@@ -283,7 +283,7 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
     width: 100%;
     height: 800px;
 }
@@ -305,8 +305,18 @@ main{
     position: absolute;
     transform: perspective(500px) rotateY(0deg);
 }
+.container-image-front{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
 .image-proyect{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image-proyect:hover{
+    transform: scale(1.1);
 }
 .info-container-card{
     display: flex;
@@ -318,7 +328,8 @@ main{
     margin-top: -4px;
     & h3 {
         font-family: var(--principal-font);
-        font-size: var(--text-sm);
+        font-size: var(--text-md);
+        padding-top: 8px;
     }
 }
 .cont-tecnologies{
@@ -327,6 +338,7 @@ main{
     justify-content: center;
     gap: 24px;
     width: 100%;
+    height: 160px;
 }
 .icon-card{
     width: 40px;
@@ -384,11 +396,11 @@ main{
     padding: 8px 20px;
     & h3 {
         font-family: var(--principal-font);
-        font-size: var(--text-sm);
+        font-size: var(--text-md);
     }
     & p {
         font-family: var(--secondary-font);
-        font-size: var(--text-input);
+        font-size: var(--text-sm);
     }
 }
 .code-button{
@@ -485,7 +497,8 @@ main{
         padding: 2px 12px;
         font-family: var(--principal-font);
         font-weight: 800;
-        width: 50px;
+        width: auto;
+        padding: 0 12px;
         background: var(--secondary-color);
     }
     & button:nth-child(2){
@@ -496,7 +509,8 @@ main{
         border: 2px solid var(--black);
         font-family: var(--principal-font);
         font-weight: 800;
-        width: 50px;
+        width: auto;
+        padding: 0 12px;
         background: var(--principal-color);
     }
     & button:nth-child(1):hover, button:nth-child(2):hover{
